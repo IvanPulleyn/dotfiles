@@ -1,4 +1,4 @@
-# -*- mode: shell; -*-
+# -*- mode: sh; -*-
 ##############################################################################
 
 [ -z "$PS1" ] && return
@@ -12,6 +12,11 @@ export MANPATH=$HOME/rpx/sys/man:$MANPATH
 export HISTCONTROL=ignoreboth
 export HISTFILESIZE=10000
 export HISTSIZE=10000
+
+export PGUSER=$USER
+export PGDATABASE=accelerator_development
+export PGDATA=$HOME/rpx/sys/var/pgdata
+export PGHOST=/tmp
 
 export PS1='\u@\h\$ '
 
