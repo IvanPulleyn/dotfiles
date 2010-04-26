@@ -20,6 +20,9 @@ export PGHOST=/tmp
 
 export PS1='\u@\h\$ '
 
+export EDITOR=emacs
+export VISUAL=$EDITOR
+
 shopt -s histappend
 shopt -s checkwinsize
 
