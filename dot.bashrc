@@ -23,6 +23,10 @@ export PS1='\u@\h\$ '
 export EDITOR=emacs
 export VISUAL=$EDITOR
 
+if [ "$EMACS" = "t" ]; then
+    export PAGER=cat
+fi
+
 shopt -s histappend
 shopt -s checkwinsize
 
