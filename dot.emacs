@@ -50,7 +50,7 @@
 (global-set-key [f10] 'compile)
 
 ;; XXX: figure out why this won't restore to non-maximized state properly
-(global-set-key [f11] 'fullscreen)
+;;(global-set-key [f11] 'fullscreen)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; end iwp .emacs
