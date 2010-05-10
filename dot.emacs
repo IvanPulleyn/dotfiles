@@ -32,7 +32,8 @@
 	      '(("\\.[hg]s$"  . haskell-mode)
 		("\\.hi$"     . haskell-mode)
 		("\\.hsc$"    . haskell-mode)
-		("\\.l[hg]s$" . literate-haskell-mode))))
+		("\\.l[hg]s$" . literate-haskell-mode)
+		("\\.rhtml$" . html-mode))))
 
 ;; toggle fullscreen mode
 (defun fullscreen ()
