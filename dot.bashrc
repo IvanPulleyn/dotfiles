@@ -13,10 +13,12 @@ export HISTCONTROL=ignoreboth
 export HISTFILESIZE=10000
 export HISTSIZE=10000
 
-export PGUSER=$USER
-export PGDATABASE=accelerator_development
-export PGDATA=$HOME/rpx/sys/var/pgdata
-export PGHOST=/tmp
+if [ "$HOSTNAME" != "destro" ]; then
+    export PGUSER=$USER
+    export PGDATABASE=accelerator_development
+    export PGDATA=$HOME/rpx/sys/var/pgdata
+    export PGHOST=/tmp
+fi
 
 export PS1='\u@\h\$ '
 
