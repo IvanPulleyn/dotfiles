@@ -35,4 +35,9 @@ function rmtmp
     find . -name \*~ -print0 | xargs -0 rm -f
 }
 
+function now
+{
+    date +%Y%M%d%H%M%S
+}
+
 ##############################################################################
