@@ -3,43 +3,24 @@
 ;; begin iwp .emacs
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; sclang
-;;(setq load-path
-;;      (append (list nil "/opt/sc-3.3.1/share/emacs/site-lisp")
-;;	      load-path))
-;;(require 'sclang)
+(setq load-path (cons "~/dotfiles" load-path))
+(autoload 'doc-mode "doc-mode")
 
-;; Customizations for all of c-mode, c++-mode, and objc-mode
 (defun my-c-mode-common-hook ()
-  ;; add my personal style and set it for the current buffer
-  ;;(c-add-style "PERSONAL" my-c-style t)
-  ;; offset customizations not in my-c-style
-  ;;(c-set-offset 'member-init-intro '++)
-  ;; other customizations
-  (setq tab-width 4
-        ;; this will make sure spaces are used instead of tabs
-        indent-tabs-mode nil)
-  ;; we like auto-newline and hungry-delete
-;;  (c-toggle-auto-hungry-state 1)
-  ;; keybindings for C, C++, and Objective-C.  We can put these in
-  ;; c-mode-map because c++-mode-map and objc-mode-map inherit it
-  (define-key c-mode-map "\C-m" 'newline-and-indent)
-  )
+  (setq tab-width 4 indent-tabs-mode nil)
+  (define-key c-mode-map "\C-m" 'newline-and-indent))
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
 
 (setq auto-mode-alist
       (append auto-mode-alist
-	      '(("\\.[hg]s$"  . haskell-mode)
+	      '(
+		("\\.[hg]s$"  . haskell-mode)
+		("\\.doc$"    . doc-mode)
 		("\\.hi$"     . haskell-mode)
 		("\\.hsc$"    . haskell-mode)
 		("\\.l[hg]s$" . literate-haskell-mode)
-		("\\.rhtml$" . html-mode))))
-
-;; toggle fullscreen mode
-(defun fullscreen ()
-  (interactive)
-  (set-frame-parameter nil 'fullscreen
-		       (if (frame-parameter nil 'fullscreen) nil 'fullboth)))
+		("\\.rhtml$"  . html-mode)
+		)))
 
 (global-set-key [f3] 'manual-entry)
 (global-set-key [f4] 'dabbrev-expand)
@@ -49,9 +30,6 @@
 (global-set-key [f8] 'indent-region)
 (global-set-key [f9] 'next-error)
 (global-set-key [f10] 'compile)
-
-;; XXX: figure out why this won't restore to non-maximized state properly
-;;(global-set-key [f11] 'fullscreen)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; end iwp .emacs
