@@ -6,6 +6,7 @@
 export PATH=$HOME/rpx/sys/bin:$PATH
 export PATH=$HOME/.cabal/bin:$PATH
 export PATH=/usr/lib/postgresql/8.4/bin:$PATH
+export PATH=/opt/ghc/6.10.4/bin:$PATH
 
 export MANPATH=$HOME/rpx/sys/man:$MANPATH
 
