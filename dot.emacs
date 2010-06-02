@@ -6,6 +6,8 @@
 (setq load-path (cons "~/dotfiles" load-path))
 (autoload 'doc-mode "doc-mode")
 
+(require 'git)
+
 (defun my-c-mode-common-hook ()
   (setq tab-width 4 indent-tabs-mode nil)
   (define-key c-mode-map "\C-m" 'newline-and-indent))
