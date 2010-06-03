@@ -33,6 +33,14 @@
 (global-set-key [f9] 'next-error)
 (global-set-key [f10] 'compile)
 
+;; timeclock stuff
+(require 'timeclock)
+(require 'timeclock-janrain)
+(setq timeclock-query-project-interval (* 15 60))
+(timeclock-modeline-display 1)
+(remove-hook 'timeclock-out-hook 'timeclock-query-comment)
+(setq timeclock-workday (* 60 60 12))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; end iwp .emacs
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -50,3 +58,8 @@
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
  )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; end of .emacs hooks
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(timeclock-query-in)
