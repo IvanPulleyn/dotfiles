@@ -137,7 +137,7 @@ of alists in the format (DAY (PROJECT TIME) (PROJECT TIME) ...)."
         ;; Add an entry for the current day to the result.
         (setq result (cons (cons (car day) ptimes) result))))
     ;; Sort the result.
-    (sort result (lambda (a b) (string> (car a) (car b))))))
+    (sort result (lambda (a b) (string< (car b) (car a))))))
 
 (defun timeclock-insert-row (fmt &rest vals)
   (choose fmt

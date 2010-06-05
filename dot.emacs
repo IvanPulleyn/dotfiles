@@ -42,6 +42,10 @@
 (setq timeclock-workday (* 60 60 12))
 (timeclock-query-in)
 
+(define-key ctl-x-map "ti" 'timeclock-in)
+(define-key ctl-x-map "to" 'timeclock-out)
+(define-key ctl-x-map "tc" 'timeclock-change)
+(define-key ctl-x-map "tg" 'timeclock-generate-report-by-day-by-project)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; end iwp .emacs
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
