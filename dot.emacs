@@ -46,6 +46,8 @@
 (define-key ctl-x-map "to" 'timeclock-out)
 (define-key ctl-x-map "tc" 'timeclock-change)
 (define-key ctl-x-map "tg" 'timeclock-generate-report-by-day-by-project)
+(define-key ctl-x-map "tr" 'timeclock-reread-log)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; end iwp .emacs
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
