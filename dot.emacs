@@ -12,6 +12,8 @@
 (autoload 'doc-mode "doc-mode")
 (autoload 'javascript-mode "javascript" nil t)
 
+(setq line-move-visual nil)
+
 ;; file extensions
 (setq auto-mode-alist
       (append auto-mode-alist
