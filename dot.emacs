@@ -5,6 +5,7 @@
 
 (setq load-path (cons "~/dotfiles" load-path))
 (autoload 'doc-mode "doc-mode")
+(autoload 'javascript-mode "javascript" nil t)
 
 (require 'git)
 
@@ -20,6 +21,7 @@
 		("\\.doc$"    . doc-mode)
 		("\\.hi$"     . haskell-mode)
 		("\\.hsc$"    . haskell-mode)
+		("\\.js$"     . javascript-mode)
 		("\\.l[hg]s$" . literate-haskell-mode)
 		("\\.rhtml$"  . html-mode)
 		)))
