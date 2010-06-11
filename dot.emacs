@@ -4,16 +4,15 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (setq load-path (cons "~/dotfiles" load-path))
+
+(require 'git)
+(require 'timeclock)
+(require 'timeclock-janrain)
+
 (autoload 'doc-mode "doc-mode")
 (autoload 'javascript-mode "javascript" nil t)
 
-(require 'git)
-
-(defun my-c-mode-common-hook ()
-  (setq tab-width 4 indent-tabs-mode nil)
-  (define-key c-mode-map "\C-m" 'newline-and-indent))
-(add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
-
+;; file extensions
 (setq auto-mode-alist
       (append auto-mode-alist
 	      '(
@@ -26,6 +25,20 @@
 		("\\.rhtml$"  . html-mode)
 		)))
 
+(setq completion-ignored-extensions
+      (append completion-ignored-extensions
+	      '(
+		".d"
+		".x"
+		)))
+
+;; c-mode
+(defun my-c-mode-common-hook ()
+  (setq tab-width 4 indent-tabs-mode nil)
+  (define-key c-mode-map "\C-m" 'newline-and-indent))
+(add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
+
+;; function keys
 (global-set-key [f3] 'manual-entry)
 (global-set-key [f4] 'dabbrev-expand)
 (global-set-key [f5] 'kill-this-buffer)
@@ -36,8 +49,6 @@
 (global-set-key [f10] 'compile)
 
 ;; timeclock stuff
-(require 'timeclock)
-(require 'timeclock-janrain)
 (setq timeclock-query-project-interval (* 15 60))
 (timeclock-modeline-display 1)
 (remove-hook 'timeclock-out-hook 'timeclock-query-comment)
