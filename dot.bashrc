@@ -11,8 +11,8 @@ export PATH=/opt/ghc/6.10.4/bin:$PATH
 export MANPATH=$HOME/rpx/sys/man:$MANPATH
 
 export HISTCONTROL=ignoreboth
-export HISTFILESIZE=10000
-export HISTSIZE=10000
+export HISTFILESIZE=1000000
+export HISTSIZE=1000000
 
 if [ "$HOSTNAME" != "destro" ]; then
     export PGUSER=$USER
