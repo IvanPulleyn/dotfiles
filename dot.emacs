@@ -24,6 +24,7 @@
 		("\\.hsc$"    . haskell-mode)
 		("\\.js$"     . javascript-mode)
 		("\\.l[hg]s$" . literate-haskell-mode)
+		("\\.erb$"  . html-mode)
 		("\\.rhtml$"  . html-mode)
 		)))
 
