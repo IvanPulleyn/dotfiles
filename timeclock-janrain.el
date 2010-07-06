@@ -1,6 +1,6 @@
 ;;; timeclock-janrain.el -- Add-ons for timeclock.el and timeclock-x.el
 ;;
-;; Version: 1.5
+;; Version: 1.6
 ;;
 ;;; History:
 ;;
@@ -13,7 +13,8 @@
 ;;      of Emacs don't define the former.  Added totals and averages
 ;;      to reports and nice formatting for times.
 ;; 1.5  Added timeclock-seconds-to-string-function.
-;; 1.6  Added my-string> to avoid stupid problem undefined function
+;; 1.6  Use string-lessp instead of string> (the latter is not a
+;;      standard Elisp function but defined in bbdb.el).
 ;;
 ;;; Todo:
 ;;
@@ -23,8 +24,6 @@
 
 (provide 'timeclock-janrain)
 (require 'timeclock-x)
-
-(defun my-string> (not string-lessp))
 
 ;; timeclock-x acts weird if this dir doesn't exist:
 (mkdir "~/.timeclock/" t)
@@ -192,7 +191,7 @@ alists in the format (PROJECT TIME)."
     (dolist (proj (or project-alist (timeclock-project-alist)) sums)
       (let ((p (car proj)) (s (timeclock-entry-list-length (cdr proj))))
         (setq sums (cons (list p s) sums))))
-    (sort sums (lambda (a b) (my-string> (car b) (car a))))))
+    (sort sums (lambda (a b) (string-lessp (car a) (car b))))))
 
 (defun timeclock-by-day-by-project (&optional day-alist)
   "Return the times spent by day summed up by project as an alist
@@ -210,11 +209,11 @@ of alists in the format (DAY (PROJECT TIME) (PROJECT TIME) ...)."
         ;; Convert the hash into a list.
         (maphash (lambda (k v) (setq ptimes (cons (list k v) ptimes))) sums)
         ;; Sort the list
-        (setq ptimes (sort ptimes (lambda (a b) (my-string> (car b) (car a)))))
+        (setq ptimes (sort ptimes (lambda (a b) (string-lessp (car a) (car b)))))
         ;; Add an entry for the current day to the result.
         (setq result (cons (cons (car day) ptimes) result))))
     ;; Sort the result.
-    (sort result (lambda (a b) (my-string> (car a) (car b))))))
+    (sort result (lambda (a b) (string-lessp (car b) (car a))))))
 
 (defun timeclock-insert-row (fmt &rest vals)
   (choose fmt
