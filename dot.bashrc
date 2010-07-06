@@ -57,4 +57,49 @@ function bzcons
     java -cp $HOME/dotfiles/oacurl-1.0.0.jar com.google.oacurl.Fetch https://www.googleapis.com/buzz/v1/activities/@me/@consumption?prettyprint=true
 }
 
+function sfs
+{
+    USAGE="Usage: sfs [on|off]"
+
+    if [ -z "$1" -o -n "$2" ]; then
+	echo "$USAGE"
+	return 1
+    elif [ "$1" != "on" -a "$1" != "off" ]; then
+	echo "$USAGE"
+	return 1
+    fi
+
+    SFS_HOSTS="`cat ~/.sfs_hosts 2>/dev/null`"
+
+    if [ -z "$SFS_HOSTS" ]; then
+	echo "no remote hosts configured"
+	return 0
+    fi
+
+    MY_UID=`id | sed -e's/^uid=\([0-9]*\).*/\1/'`
+    MY_GID=`id | sed -e's/.* gid=\([0-9]*\).*/\1/'`
+
+    for x in $SFS_HOSTS
+    do
+	if [ "$1" = "on" ]; then
+	    mount | grep "^$x" >/dev/null
+	    if [ "$?" = "0" ]; then
+		echo "$x already mounted"
+	    else
+		echo "mounting $x"
+		mkdir -p $HOME/mnt/$x
+		sshfs -C -o idmap=user -o uid=$MY_UID -o gid=$MY_GID -o reconnect $x: $HOME/mnt/$x
+	    fi
+	else
+	    mount | grep "^$x" >/dev/null
+	    if [ "$?" = "0" ]; then
+		echo "unmounting $x"
+		fusermount -u $HOME/mnt/$x
+	    else
+		echo "$x not mounted"
+	    fi
+	fi
+    done
+}
+
 ##############################################################################
