@@ -30,6 +30,8 @@ if [ "$EMACS" = "t" ]; then
     export PAGER=cat
 fi
 
+alias emacs='emacs -nw'
+
 shopt -s histappend
 shopt -s checkwinsize
 
