@@ -1,7 +1,4 @@
 ; -*- mode: lisp; -*-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; begin iwp .emacs
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (setq load-path (cons "~/dotfiles" load-path))
 
@@ -13,6 +10,8 @@
 (autoload 'javascript-mode "javascript" nil t)
 
 (setq line-move-visual nil)
+(setq column-number-mode t)
+(put 'narrow-to-region 'disabled nil)
 
 ;; file extensions
 (setq auto-mode-alist
@@ -51,8 +50,8 @@
 (global-set-key [f9] 'next-error)
 (global-set-key [f10] 'compile)
 
-;; timeclock stuff
-(setq timeclock-query-project-interval (* 15 60))
+;; timeclock
+(setq timeclock-query-project-interval (* 60 60))
 (timeclock-modeline-display 1)
 (remove-hook 'timeclock-out-hook 'timeclock-query-comment)
 (setq timeclock-workday (* 60 60 12))
@@ -63,25 +62,3 @@
 (define-key ctl-x-map "tc" 'timeclock-change)
 (define-key ctl-x-map "tg" 'timeclock-generate-report-by-day-by-project-new-buffer)
 (define-key ctl-x-map "tr" 'timeclock-reread-log)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; end iwp .emacs
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- '(column-number-mode t)
- '(tool-bar-mode nil))
-(custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- )
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; end of .emacs hooks
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
