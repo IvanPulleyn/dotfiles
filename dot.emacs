@@ -36,7 +36,7 @@
 
 ;; c-mode
 (defun my-c-mode-common-hook ()
-  (setq tab-width 4 indent-tabs-mode nil)
+  (setq tab-width 2 indent-tabs-mode nil)
   (define-key c-mode-map "\C-m" 'newline-and-indent))
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
 
