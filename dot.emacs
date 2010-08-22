@@ -8,6 +8,7 @@
 
 (autoload 'doc-mode "doc-mode")
 (autoload 'javascript-mode "javascript" nil t)
+(autoload 'graphviz-dot-mode "graphviz-dot-mode")
 
 (setq line-move-visual nil)
 (setq column-number-mode t)
@@ -19,6 +20,7 @@
 	      '(
 		("\\.[hg]s$"  . haskell-mode)
 		("\\.doc$"    . doc-mode)
+		("\\.dot$"    . graphviz-dot-mode)
 		("\\.hi$"     . haskell-mode)
 		("\\.hsc$"    . haskell-mode)
 		("\\.js$"     . javascript-mode)
