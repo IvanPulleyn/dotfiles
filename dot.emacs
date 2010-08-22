@@ -57,7 +57,6 @@
 (timeclock-modeline-display 1)
 (remove-hook 'timeclock-out-hook 'timeclock-query-comment)
 (setq timeclock-workday (* 60 60 12))
-(timeclock-query-in)
 
 (define-key ctl-x-map "ti" 'timeclock-in)
 (define-key ctl-x-map "to" 'timeclock-out)
