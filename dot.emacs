@@ -53,7 +53,6 @@
 (global-set-key [f10] 'compile)
 
 ;; timeclock
-(setq timeclock-query-project-interval (* 60 60))
 (timeclock-modeline-display 1)
 (remove-hook 'timeclock-out-hook 'timeclock-query-comment)
 (setq timeclock-workday (* 60 60 12))
