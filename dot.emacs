@@ -54,6 +54,7 @@
 
 ;; timeclock
 (timeclock-modeline-display 1)
+(timeclock-query-project-off)
 (remove-hook 'timeclock-out-hook 'timeclock-query-comment)
 (setq timeclock-workday (* 60 60 12))
 
