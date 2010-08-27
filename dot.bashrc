@@ -3,9 +3,6 @@
 
 [ -z "$PS1" ] && return
 
-export GIT_AUTHOR_IDENT="Ivan Pulleyn"
-export GIT_COMMITTER_IDENT="Ivan Pulleyn"
-
 export PATH=$HOME/rpx/sys/bin:$PATH
 export PATH=$HOME/opt/bin:$PATH
 export PATH=$HOME/.cabal/bin:$PATH
