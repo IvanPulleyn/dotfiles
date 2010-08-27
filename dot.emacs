@@ -3,8 +3,8 @@
 (setq load-path (cons "~/dotfiles" load-path))
 
 (require 'git)
-(require 'timeclock)
-(require 'timeclock-janrain)
+;; (require 'timeclock)
+;; (require 'timeclock-janrain)
 
 (autoload 'doc-mode "doc-mode")
 (autoload 'javascript-mode "javascript" nil t)
@@ -53,13 +53,13 @@
 (global-set-key [f10] 'compile)
 
 ;; timeclock
-(timeclock-modeline-display 1)
-(timeclock-query-project-off)
-(remove-hook 'timeclock-out-hook 'timeclock-query-comment)
-(setq timeclock-workday (* 60 60 12))
+;; (timeclock-modeline-display 1)
+;; (timeclock-query-project-off)
+;; (remove-hook 'timeclock-out-hook 'timeclock-query-comment)
+;; (setq timeclock-workday (* 60 60 12))
 
-(define-key ctl-x-map "ti" 'timeclock-in)
-(define-key ctl-x-map "to" 'timeclock-out)
-(define-key ctl-x-map "tc" 'timeclock-change)
-(define-key ctl-x-map "tg" 'timeclock-generate-report-by-day-by-project-new-buffer)
-(define-key ctl-x-map "tr" 'timeclock-reread-log)
+;; (define-key ctl-x-map "ti" 'timeclock-in)
+;; (define-key ctl-x-map "to" 'timeclock-out)
+;; (define-key ctl-x-map "tc" 'timeclock-change)
+;; (define-key ctl-x-map "tg" 'timeclock-generate-report-by-day-by-project-new-buffer)
+;; (define-key ctl-x-map "tr" 'timeclock-reread-log)
