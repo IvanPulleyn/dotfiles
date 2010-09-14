@@ -101,3 +101,7 @@ function sfs
 }
 
 ##############################################################################
+# local stuff
+if [ -f $HOME/.bashrc.local ]; then
+    . $HOME/.bashrc.local
+fi
