@@ -16,11 +16,8 @@ export HISTCONTROL=ignoreboth
 export HISTFILESIZE=1000000
 export HISTSIZE=1000000
 
-if [ "$HOSTNAME" != "destro" ]; then
-    export PGUSER=$USER
-    export PGDATABASE=accelerator_development
-    export PGDATA=$HOME/rpx/sys/var/pgdata
-    export PGHOST=/tmp
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+    . /etc/bash_completion
 fi
 
 export PS1='\u@\h\$ '
