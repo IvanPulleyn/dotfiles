@@ -10,6 +10,10 @@
 (autoload 'javascript-mode "javascript" nil t)
 (autoload 'graphviz-dot-mode "graphviz-dot-mode")
 
+(setq global-font-lock-mode 1)
+(setq indent-tabs-mode nil)
+(setq c-basic-offset 4)
+
 (setq line-move-visual nil)
 (setq column-number-mode t)
 (put 'narrow-to-region 'disabled nil)
