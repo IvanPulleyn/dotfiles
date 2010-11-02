@@ -3,14 +3,12 @@
 (setq load-path (cons "~/dotfiles" load-path))
 
 (require 'git)
-;; (require 'timeclock)
-;; (require 'timeclock-janrain)
 
 (autoload 'doc-mode "doc-mode")
 (autoload 'javascript-mode "javascript" nil t)
 (autoload 'graphviz-dot-mode "graphviz-dot-mode")
 
-(setq global-font-lock-mode 1)
+(global-font-lock-mode 1)
 (setq indent-tabs-mode nil)
 (setq c-basic-offset 4)
 
