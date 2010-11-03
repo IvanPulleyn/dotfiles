@@ -3,6 +3,7 @@
 
 [ -z "$PS1" ] && return
 
+export PATH=$HOME/dotfiles:$PATH
 export PATH=$HOME/local/bin:$PATH
 export PATH=$HOME/rpx/sys/bin:$PATH
 export PATH=$HOME/opt/bin:$PATH

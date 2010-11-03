@@ -3,6 +3,7 @@
 (setq load-path (cons "~/dotfiles" load-path))
 
 (require 'git)
+(require 'xcscope)
 
 (autoload 'doc-mode "doc-mode")
 (autoload 'javascript-mode "javascript" nil t)
