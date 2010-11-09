@@ -5,12 +5,14 @@
 
 export PATH=$HOME/dotfiles:$PATH
 export PATH=$HOME/local/bin:$PATH
+export PATH=$HOME/local/bin:$PATH
+export PATH=$HOME/local/bin:$PATH
 export PATH=$HOME/rpx/sys/bin:$PATH
 export PATH=$HOME/opt/bin:$PATH
-export PATH=$HOME/.cabal/bin:$PATH
-export PATH=/usr/lib/postgresql/8.4/bin:$PATH
-export PATH=/opt/ghc/6.10.4/bin:$PATH
 export PATH=$HOME/android-sdk-linux_86/tools:$PATH
+export PATH=$PATH:/sbin
+export PATH=$PATH:/usr/sbin
+export PATH=$PATH:/usr/local/sbin
 
 export MANPATH=$HOME/rpx/sys/man:$MANPATH
 
