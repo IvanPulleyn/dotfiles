@@ -11,6 +11,7 @@
 
 (global-font-lock-mode 1)
 (setq indent-tabs-mode nil)
+(setq c-default-style "bsd")
 (setq c-basic-offset 4)
 
 (setq line-move-visual nil)
@@ -41,8 +42,7 @@
 
 ;; c-mode
 (defun my-c-mode-common-hook ()
-  (setq tab-width 2 indent-tabs-mode nil)
-  (define-key c-mode-map "\C-m" 'newline-and-indent))
+  (local-set-key (kbd "RET") 'newline-and-indent))
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
 
 ;; function keys
