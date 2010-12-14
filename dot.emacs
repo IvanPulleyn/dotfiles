@@ -11,6 +11,8 @@
 (autoload 'doc-mode "doc-mode")
 (autoload 'javascript-mode "javascript" nil t)
 (autoload 'graphviz-dot-mode "graphviz-dot-mode")
+(load "nxml-mode-20041004/rng-auto.el")
+
 
 (global-font-lock-mode 1)
 (setq indent-tabs-mode nil)
@@ -34,6 +36,8 @@
 		("\\.l[hg]s$" . literate-haskell-mode)
 		("\\.erb$"  . html-mode)
 		("\\.rhtml$"  . html-mode)
+		("\\.xml$"  . nxml-mode)
+		("\\.xsl$"  . nxml-mode)
 		)))
 
 (setq completion-ignored-extensions
@@ -42,9 +46,6 @@
 		".d"
 		".x"
 		)))
-
-;; nxml-mode
-(defun enable-nxml () (interactive) (load "nxml-mode-20041004/rng-auto.el"))
 
 ;; c-mode
 (defun my-c-mode-common-hook ()
