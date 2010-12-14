@@ -1,6 +1,9 @@
 ; -*- mode: lisp; -*-
 
-(setq load-path (cons "~ivan/dotfiles" load-path))
+(setq load-path
+      (append (list nil 
+		    "~ivan/dotfiles/")
+	      load-path))
 
 (require 'git)
 (require 'xcscope)
@@ -39,6 +42,9 @@
 		".d"
 		".x"
 		)))
+
+;; nxml-mode
+(defun enable-nxml () (interactive) (load "nxml-mode-20041004/rng-auto.el"))
 
 ;; c-mode
 (defun my-c-mode-common-hook ()
