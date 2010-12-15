@@ -49,7 +49,8 @@
 
 ;; c-mode
 (defun my-c-mode-common-hook ()
-  (local-set-key (kbd "RET") 'newline-and-indent))
+  (local-set-key (kbd "RET") 'newline-and-indent)
+  (setq indent-tabs-mode nil))
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
 
 ;; function keys
