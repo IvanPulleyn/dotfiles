@@ -55,7 +55,7 @@
 
 ;; function keys
 (global-set-key [f1] 'cscope-find-global-definition)
-(global-set-key [f2] 'cscope-find-this-symbol)
+(global-set-key [f2] 'cscope-find-this-text-string)
 (global-set-key [f3] 'manual-entry)
 (global-set-key [f4] 'dabbrev-expand)
 (global-set-key [f5] 'kill-this-buffer)
