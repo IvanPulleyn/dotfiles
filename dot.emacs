@@ -9,6 +9,7 @@
 (require 'xcscope)
 
 (autoload 'doc-mode "doc-mode")
+(setq js2-mirror-mode nil)
 (autoload 'javascript-mode "javascript" nil t)
 (autoload 'graphviz-dot-mode "graphviz-dot-mode")
 (load "nxml-mode-20041004/rng-auto.el")
