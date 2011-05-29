@@ -38,6 +38,13 @@ alias emacs='emacs -nw'
 shopt -s histappend
 shopt -s checkwinsize
 
+function fanmax
+{
+    sudo rmmod thinkpad_acpi
+    sudo modprobe thinkpad_acpi fan_control=1
+    sudo bash -c 'sudo echo "level disengaged" > /proc/acpi/ibm/fan'
+}
+
 function rmtmp
 {
     find . -name \*~ -print0 | xargs -0 rm -f
