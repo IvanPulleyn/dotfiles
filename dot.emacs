@@ -51,7 +51,33 @@
 ;; c-mode
 (defun my-c-mode-common-hook ()
   (local-set-key (kbd "RET") 'newline-and-indent)
-  (setq indent-tabs-mode nil))
+  (setq indent-tabs-mode nil)
+  ;; originally copied from http://www.patd.net/~ciggieposeur/other/startup.el
+  (setq c-offsets-alist '((innamespace . 0)		;; Don't indent for namespace
+			  (defun-block-intro . +)	;; Do indent for functions
+			  (statement-block-intro . +)	;; Do indent for statementblocks
+			  (statement . 0)		;; Don't indent on individual statements
+			  (substatement-open . 0)	;; Do indent for conditional blocks
+			  (substatement . +)		;; Do indent for 1-line if blocks
+			  (else-clause . 0)		;; Don't indent for the else clause
+			  (block-close . 0)		;; Don't indent for the block closing }
+			  (cpp-macro . [0])		;; Don't indent inside #ifdefs
+			  (cpp-macro-cont . 0)		;; Don't indent inside #ifdefs
+			  (inclass . +)			;; Do indent inside class declarations
+			  (case-label . 0)		;; Do indent for case labels
+			  (access-label . -)		;; Don't indent public/private
+			  (statement-case-intro . +)	;; Do indent for case blocks
+			  (comment-intro . 0)		;; Don't indent for comments
+			  (c . 1)			;; Don't indent for comment continuations
+			  (brace-list-intro . +)	;; Do indent the first line in enums
+			  (brace-list-entry . 0)	;; Do not indent additional lines inside enums
+			  (brace-entry-open . 0)	;; Do not indent additional lines inside brace lists
+			  (brace-list-close . 0)	;; Go back after brace list closes
+			  (topmost-intro-cont . 0)	;; top-level continued (like argument in function pointer typedef)
+			  (arglist-intro . +)		;; Do indent initial argument
+			  (arglist-cont-nonempty . +)	;; Do indent additional argument lines
+			  (arglist-close . 0)		;; Do not indent closing paren
+			  )))
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
 
 ;; function keys
