@@ -66,6 +66,15 @@ function bzcons
     java -cp $HOME/dotfiles/oacurl-1.0.0.jar com.google.oacurl.Fetch https://www.googleapis.com/buzz/v1/activities/@me/@consumption?prettyprint=true
 }
 
+function ctime
+{
+    if [ -z "$1" ]; then
+	echo "Usage: ctime timestamp";
+	return 1
+    fi
+    perl -e"use POSIX; print ctime($1);"
+}
+
 function sfs
 {
     USAGE="Usage: sfs [on|off]"
