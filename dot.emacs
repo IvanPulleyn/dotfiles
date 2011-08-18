@@ -48,10 +48,19 @@
 		".x"
 		)))
 
+;; turn on code folding
+(defun enable-folding ()
+  (hs-minor-mode t)
+  (local-set-key (kbd "C-c =") 'hs-show-block)
+  (local-set-key (kbd "C-c +") 'hs-show-all)
+  (local-set-key (kbd "C-c -") 'hs-hide-block)
+  (local-set-key (kbd "C-c _") 'hs-hide-all))
+
 ;; c-mode
 (defun my-c-mode-common-hook ()
   (local-set-key (kbd "RET") 'newline-and-indent)
   (setq indent-tabs-mode nil)
+  (enable-folding)
   ;; originally copied from http://www.patd.net/~ciggieposeur/other/startup.el
   (setq c-offsets-alist '((innamespace . 0)		;; Don't indent for namespace
 			  (defun-block-intro . +)	;; Do indent for functions
@@ -79,6 +88,7 @@
 			  (arglist-close . 0)		;; Do not indent closing paren
 			  )))
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
+
 
 ;; function keys
 (global-set-key [f1] 'cscope-find-global-definition)
