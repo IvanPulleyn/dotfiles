@@ -7,6 +7,7 @@
 
 (require 'git)
 (require 'xcscope)
+(require 'protobuf-mode)
 
 (autoload 'doc-mode "doc-mode")
 (setq js2-mirror-mode nil)
@@ -31,14 +32,15 @@
 		("\\.[hg]s$"  . haskell-mode)
 		("\\.doc$"    . doc-mode)
 		("\\.dot$"    . graphviz-dot-mode)
+		("\\.erb$"    . html-mode)
 		("\\.hi$"     . haskell-mode)
 		("\\.hsc$"    . haskell-mode)
 		("\\.js$"     . javascript-mode)
 		("\\.l[hg]s$" . literate-haskell-mode)
-		("\\.erb$"  . html-mode)
+		("\\.proto$"  . protobuf-mode)
 		("\\.rhtml$"  . html-mode)
-		("\\.xml$"  . nxml-mode)
-		("\\.xsl$"  . nxml-mode)
+		("\\.xml$"    . nxml-mode)
+		("\\.xsl$"    . nxml-mode)
 		)))
 
 (setq completion-ignored-extensions
