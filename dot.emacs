@@ -103,4 +103,5 @@
 (global-set-key [f8] 'indent-region)
 (global-set-key [f9] 'next-error)
 (global-set-key [f10] 'compile)
+(global-set-key "g" 'goto-line)
 
