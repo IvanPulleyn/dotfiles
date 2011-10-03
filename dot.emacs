@@ -7,7 +7,6 @@
 
 (require 'git)
 (require 'xcscope)
-(require 'protobuf-mode)
 
 (autoload 'doc-mode "doc-mode")
 (setq js2-mirror-mode nil)
@@ -26,19 +25,6 @@
 (put 'narrow-to-region 'disabled nil)
 
 ;; file extensions
-
-;; php mmm
-(require 'mmm-mode)
-(setq mmm-global-mode 'maybe)
-(mmm-add-mode-ext-class nil "\\.php?\\'" 'html-php)
-(mmm-add-classes
- '((html-php
-    :submode php-mode
-    :front "<\\?\\(php\\)?"
-    :back "\\?>")))
-(autoload 'php-mode "php-mode" "PHP editing mode" t)
-(add-to-list 'auto-mode-alist '("\\.php?\\'" . html-mode))
-
 (setq auto-mode-alist
       (append auto-mode-alist
 	      '(
