@@ -77,6 +77,7 @@
 			  (case-label . 0)		;; Do indent for case labels
 			  (access-label . -)		;; Don't indent public/private
 			  (statement-case-intro . +)	;; Do indent for case blocks
+			  (statement-case-open . +)	;; Do indent for case open
 			  (comment-intro . 0)		;; Don't indent for comments
 			  (c . 1)			;; Don't indent for comment continuations
 			  (brace-list-intro . +)	;; Do indent the first line in enums
