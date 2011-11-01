@@ -67,6 +67,7 @@
 			  (defun-block-intro . +)	;; Do indent for functions
 			  (statement-block-intro . +)	;; Do indent for statementblocks
 			  (statement . 0)		;; Don't indent on individual statements
+			  (statement-cont . +)		;; Don't indent on individual statements
 			  (substatement-open . 0)	;; Do indent for conditional blocks
 			  (substatement . +)		;; Do indent for 1-line if blocks
 			  (else-clause . 0)		;; Don't indent for the else clause
