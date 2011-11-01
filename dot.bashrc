@@ -38,6 +38,11 @@ alias emacs='emacs -nw'
 shopt -s histappend
 shopt -s checkwinsize
 
+function gpp
+{
+    git pull && git push
+}
+
 function fanmax
 {
     sudo rmmod thinkpad_acpi
