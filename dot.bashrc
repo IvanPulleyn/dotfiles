@@ -60,17 +60,6 @@ function now
     date +%Y%m%d%H%M%S
 }
 
-# buzz
-function bzlogin
-{
-    java -cp $HOME/dotfiles/oacurl-1.0.0.jar com.google.oacurl.Login -buzz
-}
-
-function bzcons
-{
-    java -cp $HOME/dotfiles/oacurl-1.0.0.jar com.google.oacurl.Fetch https://www.googleapis.com/buzz/v1/activities/@me/@consumption?prettyprint=true
-}
-
 function ctime
 {
     if [ -z "$1" ]; then
